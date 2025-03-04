@@ -1,0 +1,2021 @@
+@import url(https://fonts.cdnfonts.com/css/sf-pro-display);
+@import url(https://fonts.cdnfonts.com/css/roboto);
+
+@font-face {
+    font-family: 'BetclicVariable';
+    src: url(../fonts/02-Variable/BetclicVariableVF.ttf) format('truetype'), url(../fonts/02-Variable/BetclicVariableVF.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'BetclicRegular';
+    src: url(../fonts/01-Web/WOFF/Betclic-Regular.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'BetclicBold';
+    src: url(../fonts/01-Web/WOFF/Betclic-ExtraBold.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'BetclicCondensed';
+    src: url(../fonts/01-Web/WOFF/Betclic-CondensedRegular.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'BetclicExpanded';
+    src: url(../fonts/01-Web/WOFF/Betclic-ExpandedExtraBold.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'BetclicLight';
+    src: url(../fonts/01-Web/WOFF/Betclic-Light.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'BetclicRegularBold';
+    src: url(../fonts/01-Web/WOFF/Betclic-Bold.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'BetclicThin';
+    src: url(../fonts/01-Web/WOFF/Betclic-Thin.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'BetclicCondensedBold';
+    src: url(../fonts/01-Web/WOFF/Betclic-CondensedMedium.woff) format('woff')
+}
+
+html,
+body,
+div,
+p,
+a,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+body,
+html {
+    color: #111;
+    font-family: 'BetclicRegular', serif;
+    scroll-behavior: smooth;
+    max-width: 1720px;
+    margin: auto;
+    overflow-x: hidden
+}
+
+.title-small {
+    font-size: 26px;
+    line-height: 30px;
+    font-family: 'BetclicCondensed'
+}
+
+.title-big {
+    font-size: 24px;
+    line-height: 28px;
+    font-family: 'BetclicBold';
+    text-transform: uppercase
+}
+
+.title-medium {
+    font-size: 24px;
+    line-height: 28px
+}
+
+.b-bold {
+    font-family: 'BetclicBold'
+}
+
+.p-content-regular {
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Roboto'
+}
+
+.p-content-big {
+    font-family: 'BetclicBold';
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 22px
+}
+
+.p-content-big-italic {
+    font-style: italic;
+    font-family: 'BetclicBold';
+    font-size: 24px;
+    line-height: 28px
+}
+
+.is-centered {
+    text-align: center
+}
+
+.is-white {
+    color: #fff
+}
+
+.is-dark {
+    color: #111
+}
+
+.is-yellow {
+    color: #FC0
+}
+
+.is-highlighted {
+    color: #E10014
+}
+
+.is-italic {
+    font-style: italic
+}
+
+.is-lowlighted {
+    color: #AEAEAE
+}
+
+.is-bold {
+    font-weight: 900;
+    font-family: 'Roboto'
+}
+
+.is-condensed {
+    font-family: 'BetclicCondensed'
+}
+
+.title-is-active {
+    color: #E10014
+}
+
+.small-title-is-active {
+    color: #111
+}
+
+header {
+    background: #E10014;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'BetclicRegular';
+    text-transform: uppercase;
+    font-weight: 800;
+    position: fixed;
+    width: 100vw;
+    z-index: 3;
+    top: 0;
+    left: 0
+}
+
+.title-sponsoring {
+    color: #E10014;
+    font-family: 'BetclicBold';
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 64px;
+    line-height: 78px;
+    text-shadow: 4px 4px 4px #FFCC0040;
+    margin-bottom: 85px;
+}
+
+
+header h1 {
+    padding-right: 20px
+}
+
+header .img-logo {
+    width: 131px;
+    padding-left: 20px
+}
+
+.menu-aside {
+    min-width: 250px;
+    width: 250px;
+    height: 100%;
+    background: inherit;
+    position: fixed;
+    top: 60px;
+    z-index: 2
+}
+
+.big-ul-menu {
+    padding-left: 50px;
+    padding-top: 35px
+}
+
+.li-small-menu {
+    padding-top: 15px
+}
+
+.nav-item {
+    font-size: 16px;
+    line-height: 24px
+}
+
+.li-small-menu p a:hover {
+    color: #E10014;
+    transition: 0.4s
+}
+
+.li-small-menu a:hover {
+    color: #111;
+    transition: 0.4s
+}
+
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 40px;
+    position: fixed;
+    top: 10px;
+    right: 5px;
+    z-index: 1001
+}
+
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+    margin-top: -4px
+}
+
+.small-ul-menu {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out
+}
+
+.small-ul-menu.open {
+    display: block;
+    max-height: 1000px;
+    transition: max-height 0.4s ease-in-out
+}
+
+.all-page {
+    padding-right: 50px;
+    padding-left: 250px;
+    position: relative;
+    margin-top: 44px
+}
+
+section {
+    padding-top: 50px;
+    overflow: hidden
+}
+
+.div-element-menu {
+    padding-bottom: 50px
+}
+
+.download-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.container-btns a {
+    margin: 0 4px
+}
+
+.btn-primary {
+    background: #FC0;
+    border-radius: 8px;
+    color: #111;
+    padding: 10px 16px;
+    padding-right: 8px;
+    font-size: 14px;
+    line-height: 1.2;
+    transition: 0.3s;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Roboto';
+    font-weight: 600;
+    overflow: hidden;
+    justify-content: center
+}
+
+.extra-info {
+    margin-left: 8px;
+    opacity: 0;
+    visibility: hidden;
+    max-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: max-width 0.1s ease, opacity 0.1s ease 0.1s, visibility 0.1s ease;
+    font-family: 'BetclicLight'
+}
+
+.btn-primary:hover {
+    padding-right: 35px
+}
+
+.btn-primary:hover .extra-info {
+    opacity: 1;
+    visibility: visible;
+    max-width: 150px
+}
+
+.download-img {
+    height: 14px;
+    margin-left: 3px;
+    position: absolute
+}
+
+.download-img-logo {
+    height: 14px;
+    margin-left: 3px;
+    position: absolute
+}
+
+.container-logotype {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    padding: 50px
+}
+
+.container-logotype img {
+    width: 440px
+}
+
+.container-logotype .is-italic {
+    margin: 50px 20px
+}
+
+.container-logotype p b {
+    padding-bottom: 20px;
+    margin-top: 25px
+}
+
+.container-backgrounds {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.container-backgrounds-sponso {
+    display: flex;
+    justify-content: center;
+    gap: 50px
+}
+
+
+.text-left p {
+    width: 335px;
+    padding-top: 25px
+}
+
+.text-left-big p {
+    width: 500px;
+    padding-top: 25px
+}
+
+.container-img-background {
+    width: 100%
+}
+
+.first-row {
+    display: flex;
+    width: 100%
+}
+
+.img-betclic-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.container-img-1,
+.container-img-2,
+.container-img-3,
+.container-img-4,
+.container-img-5,
+.container-img-6,
+.container-img-7 {
+    width: 100%;
+    height: auto;
+    position: relative
+}
+
+.container-img-6,
+.container-img-7 {
+    overflow: hidden;
+    position: relative
+}
+
+.container-img-6 img,
+.container-img-7 img {
+    transition: transform 0.1s;
+    transform-origin: center center
+}
+
+.container-img-1::after {
+    content: 'Betclic_Logo_Colour';
+    color: #111;
+    position: absolute;
+    font-size: 14px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-family: 'Roboto';
+    font-weight: 600
+}
+
+.container-img-2::after {
+    content: 'Betclic_Logo_Colour';
+    color: #fff;
+    position: absolute;
+    font-size: 14px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-family: 'Roboto';
+    font-weight: 600
+}
+
+.container-img-3::after {
+    content: 'Betclic_Logo_MonochromeA';
+    color: #fff;
+    position: absolute;
+    font-size: 14px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-family: 'Roboto';
+    font-weight: 600
+}
+
+.container-img-4::after {
+    content: 'Betclic_Logo_MonochromeA';
+    color: #fff;
+    position: absolute;
+    font-size: 14px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.container-img-5::after {
+    content: 'Betclic_Logo_MonochromeB';
+    color: #111;
+    position: absolute;
+    font-size: 14px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.p-content-big-technic {
+    font-family: 'BetclicCondensed';
+    font-size: 32px;
+    line-height: 38px
+}
+
+#image-container {
+    width: 100%;
+    height: 100%;
+    max-height: 500px
+}
+
+#image-container img {
+    object-fit: cover;
+    width: 100%
+}
+
+input[type="radio"] {
+    display: none
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #AEAEAE;
+    color: #AEAEAE;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px
+}
+
+.btn-secondary:hover {
+    border-color: #E10014;
+    color: #E10014
+}
+
+.btn-secondary input[type="radio"]:checked+label {
+    background: red;
+    color: #fff
+}
+
+.btn-secondary.active {
+    background: #E10014;
+    color: #fff;
+    transition: 0.5s;
+    border: none
+}
+
+.lottie-player {
+    background-color: red;
+    display: none
+}
+
+.container-all-img-sponso img {
+    width: 100%;
+    object-fit: contain
+}
+
+.container-background-sponso {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    min-height: 200px
+}
+
+.container-all-img-sponso {
+    position: relative;
+    width: 50%
+}
+
+.fade-img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease
+}
+
+.fade-img2 {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease
+}
+
+.fade-img.active {
+    opacity: 1
+}
+
+.fade-img2.active2 {
+    opacity: 1
+}
+
+.ol-donts {
+    padding-left: 25px;
+    max-width: 325px;
+    margin-bottom: 0
+}
+
+.ol-donts li {
+    font-size: 14px;
+    line-height: 14px;
+    padding: 2.5px 5px;
+    font-family: 'Roboto', sans-serif
+}
+
+.bg-is-red {
+    background: #E10014;
+    color: #fff;
+    align-items: center;
+    padding: 25px
+}
+
+.container-donts-first-row {
+    display: flex;
+    margin: 0;
+    padding: 0
+}
+
+.bloc-dont img {
+    width: 100%;
+    margin: 0;
+    padding: 0
+}
+
+.bloc-dont {
+    position: relative
+}
+
+.dont-1::after {
+    content: '1';
+    color: #fff;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.dont-2::after {
+    content: '2';
+    color: #fff;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.dont-3::after {
+    content: '3';
+    color: #fff;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.dont-4::after {
+    content: '4';
+    color: #fff;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.dont-5::after {
+    content: '5';
+    color: #fff;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.dont-6::after {
+    content: '6';
+    color: #fff;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.dont-7::after {
+    content: '7';
+    color: #fff;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.dont-8::after {
+    content: '8';
+    color: #fff;
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    font-family: 'Roboto';
+    transform: translateX(-50%);
+    font-weight: 600
+}
+
+.img-quality {
+    width: 100%
+}
+
+.container-references {
+    display: flex;
+    padding-top: 25px
+}
+
+.bloc-reference {
+    width: 100%;
+    padding: 25px;
+    position: relative;
+    padding-bottom: 60px
+}
+
+.bloc-reference .p-title-small {
+    padding-bottom: 10px;
+    font-family: 'BetclicCondensed';
+    font-size: 24px
+}
+
+.bloc-reference td {
+    min-width: 60px
+}
+
+.bloc-red {
+    background: #E10014;
+    cursor: copy
+}
+
+.bloc-yellow {
+    background: #FC0;
+    cursor: copy
+}
+
+.bloc-white {
+    background: #FFF;
+    cursor: copy
+}
+
+.bloc-black {
+    background: #000;
+    cursor: copy
+}
+
+.bloc-red .p-title-small::after,
+.bloc-black .p-title-small::after,
+.bloc-blue .p-title-small::after  {
+    content: '';
+    height: 30px;
+    width: 30px;
+    background: url(../img/CopiedWhite.png);
+    background-size: 100%;
+    position: absolute;
+    right: 25px
+}
+
+.bloc-yellow .p-title-small::after,
+.bloc-white .p-title-small::after {
+    content: '';
+    height: 30px;
+    width: 30px;
+    background: url(../img/CopiedBlack.png);
+    background-size: 100%;
+    position: absolute;
+    right: 25px
+}
+
+.container-bar-anim {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    overflow: hidden;
+    border-radius: 0;
+    margin-top: 0
+}
+
+.barAnim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    transition: width 1s ease
+}
+
+.barAnim-red {
+    background-color: #E10014;
+    width: 25%;
+    font-family: 'BetclicVariable'
+}
+
+.barAnim-yellow {
+    background-color: #FC0;
+    width: 25%;
+    color: #000
+}
+
+.barAnim-white {
+    background-color: #FFF;
+    color: #333;
+    width: 25%
+}
+
+.barAnim-black {
+    background-color: #000;
+    width: 25%
+}
+
+.animNumber {
+    margin: 0;
+    font-size: 18px;
+    font-family: 'BetclicRegular';
+    color: inherit;
+    opacity: 0;
+    transition: opacity 0.5s ease
+}
+
+.container-usages {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    padding-top: 25px;
+    max-height: 300px
+}
+
+.box-usage {
+    flex: 1;
+    transition: flex 0.5s ease, transform 0.5s ease;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 25px
+}
+
+.box-usage:last-child {
+    margin-right: 0
+}
+
+.box-usage:nth-child(1) {
+    background-color: #E10014;
+    color: #fff;
+    flex: 7.5
+}
+
+.box-usage:nth-child(2) {
+    background-color: #FC0;
+    color: #111;
+    flex: .8
+}
+
+.box-usage:nth-child(3) {
+    background-color: #fff;
+    color: #000;
+    flex: 1.5
+}
+
+.box-usage:nth-child(4) {
+    background-color: #000;
+    color: #fff;
+    flex: .2
+}
+
+.box-usage.active {
+    flex: 20
+}
+
+.content {
+    display: none;
+    transition: opacity 0.5s ease;
+    min-height: 260px
+}
+
+.box-usage.active .content {
+    display: inline-block
+}
+
+.p-content-thin {
+    font-family: 'BetclicThin';
+    font-size: 32px
+}
+
+.p-content-thin b {
+    font-family: 'BetclicRegular'
+}
+
+.content .p-content-regular {
+    font-size: 24px;
+    line-height: 28px
+}
+
+.padTop {
+    padding-top: 25px
+}
+
+.is-bigger {
+    font-size: 32px !important;
+    line-height: 38px !important
+}
+
+.container-examples {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding-top: 25px
+}
+
+.container-examples img {
+    width: 100%
+}
+
+.container-emotes {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding-top: 25px
+}
+
+.second-row-emote img {
+    width: 100px
+}
+
+.img-gif {
+    width: 210px !important;
+    position: relative;
+    top: 0
+}
+
+.first-row-emote {
+    display: flex;
+    justify-content: center
+}
+
+.second-row-emote {
+    display: flex;
+    justify-content: center;
+    gap: 50px
+}
+
+.p-roboto {
+    font-family: 'Roboto Thin', sans-serif;
+    font-size: 32px;
+    line-height: 38px
+}
+
+.p-sf {
+    font-family: 'SF Pro Display', sans-serif
+}
+
+.sf-big {
+    font-size: 32px;
+    line-height: 38px
+}
+
+.container-image-corpo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 25px
+}
+
+
+.container-img-corpo img {
+    width: 100%;
+    margin: auto;
+}
+
+footer {
+    width: 100vw;
+    background: red;
+    position: absolute;
+    left: 0
+}
+
+.container-footer {
+    background: #EEF0F3;
+    padding: 25px 0;
+    color: #AEAEAE;
+    left: 0;
+    width: 100%
+}
+
+.p-footer {
+    font-size: 10px;
+    line-height: 12px
+}
+
+.section-typography {
+    margin-bottom: 100px
+}
+
+.container-color-hover {
+    margin-top: 30px;
+    width: 100%
+}
+
+.color-hover-row {
+    width: 100%;
+    display: flex
+}
+
+.bloc-color-hover .p-content-hover {
+    font-family: 'BetclicLight';
+    font-size: 24px;
+    line-height: 28px;
+    padding-bottom: 10px
+}
+
+.bloc-color-hover .p-content-hover-small {
+    font-family: 'BetclicBold';
+    font-size: 14px;
+    line-height: 18px;
+    padding-bottom: 10px;
+    text-transform: uppercase
+}
+
+.bloc-color-hover {
+    width: 100%;
+    height: 260px;
+    padding: 25px;
+    color: #EEF0F3;
+    background: #fff;
+    border: 1px solid #EEF0F3
+}
+
+.red-bloc:hover {
+    background-color: #E10014;
+    transition: 0.5s;
+    color: #fff
+}
+
+.red-bloc:hover .p-content-hover-small {
+    color: #000;
+    transition: 0.5s
+}
+
+.yellow-bloc:hover {
+    background-color: #FC0;
+    transition: 0.5s;
+    color: #000
+}
+
+.yellow-bloc:hover p {
+    color: #000;
+    transition: 0.5s
+}
+
+.white-bloc:hover {
+    background-color: #fff;
+    transition: 0.5s;
+    color: #E10014
+}
+
+.white-bloc:hover .p-content-hover-small {
+    color: #000;
+    transition: 0.5s
+}
+
+.black-bloc:hover {
+    background-color: #000;
+    transition: 0.5s;
+    color: #fff
+}
+
+.black-bloc:hover .p-content-hover-small {
+    color: #FC0;
+    transition: 0.5s
+}
+
+.black-bloc:hover .p-content-hover-small b {
+    color: #E10014;
+    transition: 0.5s
+}
+
+.container-img-6::after {
+    content: 'Provided pixelated formats: JPG, PNG, GIF, PSD';
+    color: #fff;
+    position: absolute;
+    font-size: 14px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-family: 'Roboto';
+    font-weight: 600;
+    width: 100%
+}
+
+.container-img-7::after {
+    content: 'Provided vectorised formats: AI, EPS, PDF, SVG';
+    color: #fff;
+    position: absolute;
+    font-size: 14px;
+    text-align: center;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-family: 'Roboto';
+    font-weight: 600;
+    width: 100%
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer
+}
+
+input[type="range"] {
+    width: 100px
+}
+
+.burger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px)
+}
+
+.burger-menu.open span:nth-child(2) {
+    opacity: 0
+}
+
+.burger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px)
+}
+
+#copy-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #E10014;
+    color: #fff;
+    padding: 25px 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1002
+}
+
+
+/* PAGE SPONSO FR */
+.sections-click-country {
+    padding-top: 85px;
+    padding-bottom: 50px;
+}
+
+.section-page-sponsoring {
+    padding-top: 0;
+}
+
+.paddingBottomUp25 {
+    padding-bottom: 25px !important;
+}
+
+.paddingBottomUp50 {
+    padding-bottom: 50px !important;
+}
+
+.paddingBottomUp75 {
+    padding-bottom: 75px !important;
+}
+
+.paddingBottomUp100 {
+    padding-bottom: 100px !important;
+}
+
+.paddingBottomUp150 {
+    padding-bottom: 150px !important;
+}
+
+.container-box-country {
+    display: flex;
+    justify-content: center;
+}
+
+.container-partnership-logo {
+    padding-bottom: 50px;
+}
+
+
+
+.box-country {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: #EEF0F3;
+    padding: 14px;
+    border-radius: 16px;
+    margin-bottom: 18px;
+}
+
+.country {
+    color: #E10014;
+    line-height: 20px;
+    padding: 12px 20px;
+    border: 1px solid #E10014;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.country:hover {
+    background: #E10014;
+    color: #fff;
+}
+
+.country-is-active {
+    background: #E10014;
+    color: #fff;
+}
+
+.container-sponsoring {
+    padding-top: 75px;
+}
+
+.align-text {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 93%;
+}
+
+.b-warning {
+    font-family: 'BetclicCondensedBold';
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.container-img-sponsoFR {
+    gap: 25px;
+}
+
+.img-sponsoFR {
+    max-width: 320px;
+    max-height: 400px;
+}
+
+.caption-sponso {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+.container-sponsoring-right img {
+    max-width: 1027px;
+    max-height: 422px;
+    width: 100%;
+}
+
+.container-sponsoring-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 320px;
+}
+
+.container-sponsoring-full {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.ul-reference {
+    list-style: initial !important;
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+}
+
+.list-reference {
+    position: relative;
+    top: -7px;
+}
+
+.container-all-partners {
+    margin-top: 25px;
+}
+
+.caption-partners {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.box-full-width {
+    justify-content: space-between;
+}
+
+.box-partners-national {
+    display: flex;
+    gap: 0px;
+}
+.container-partner-local{
+    gap: 48px;
+}
+
+.container-partner {
+    padding-top: 25px;
+}
+
+.container-partner img {
+    height: 100px;
+}
+
+.container-fresque-balls {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.container-fresque-balls img {
+    width: 100%;
+}
+
+.container-text-balls {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.column-balls {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.gap-0 {
+    gap: 5px;
+}
+
+.column-balls p {
+    font-size: 14px;
+}
+
+.h2-ufc {
+    font-family: 'BetclicRegularBold';
+    color: #000;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.container-fond {
+    background: url(../img/fond2.png) no-repeat;
+}
+
+.container-fond .download-container {
+    padding-top: 25px;
+}
+
+.ol-ufc {
+    list-style-type: disc;
+}
+
+.ol-ufc li p {
+    margin: 0;
+    padding: 0;
+}
+
+.ufc-align {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.img-UFC {
+    max-width: 250px;
+    width: 226px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+
+.container-logo-partnership {
+    display: flex;
+    gap: 25px;
+    align-items: baseline;
+}
+
+.container-logo-partnership img {
+    height: 100px;
+}
+
+.caption-ufc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+
+.box-partnership-text {
+    display: flex;
+    gap: 25px;
+    align-items: baseline;
+}
+
+.container-partner-ufc {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.box-right {
+    width: 100%;
+}
+
+.box-right img {
+    width: 100%;
+    max-width: 325px;
+}
+
+.box-right p {
+    width: 100%;
+}
+
+.box-illu {
+    margin: auto;
+    text-align: center;
+}
+
+.container-clubs-ligue1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-club img {
+    width: 100%;
+    margin: auto;
+}
+
+.box-club {
+    max-width: 60px;
+    text-align: center;
+}
+
+.caption-clubName {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+
+.caption-clubSurname {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 8px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.caption-clubStade {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8px;
+    text-align: center;
+}
+
+.container-fff-rights {
+    justify-content: flex-start
+}
+
+.container-fff-rights .box-right {
+    width: 25%;
+}
+
+.container-fff-rights .box-right p {
+    padding: 0;
+}
+
+.box-border {
+    border: 1px solid #E10014;
+    padding: 10px;
+}
+.box-border-black {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.img-OL-1 {
+    width: 300px !important;
+}
+
+.img-OL-2 {
+    width: 225px !important;
+}
+
+.img-OL-3 {
+    width: 205px !important;
+    margin: auto;
+
+}
+
+.container-img-OL {
+    max-width: 300px !important;
+    width: auto !important;
+}
+
+.container-ol-rights {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+
+.caption-ol {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+
+.bg-logo-ol,
+.bg-logo-ol-betclic {
+    width: 100%;
+    height: 265px;
+}
+
+.bg-logo-ol {
+    background: url(../img/logoOL.png)no-repeat;
+    background-size: 45%;
+    background-position: center;
+}
+
+.bg-logo-ol-betclic {
+    background: url(../img/Cosignature.png)no-repeat;
+    background-size: 75%;
+    background-position: center;
+}
+
+.p-content-ol {
+    line-height: 20px;
+    max-width: 325px;
+}
+
+.container-ol-print-digit {
+    justify-content: flex-start;
+}
+
+.container-ol-print-digit .box-right {
+    width: 25%;
+}
+
+.container-backgrounds {
+    justify-content: flex-start;
+}
+
+.container-lnr-partnership {
+    display: flex;
+    gap: 25px;
+    justify-content: flex-start;
+}
+
+.box-logo-lnr {
+    max-width: 325px;
+}
+
+.box-logo-lnr {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-logo-lnr img {
+    height: 120px;
+    object-fit: contain;
+}
+
+.box-logo-lnr p {
+    padding: 0;
+    width: 100%;
+}
+.box-logo-lnr figcaption{
+    padding: 25px 0;
+}
+
+.border-p-low{
+    border: 1px solid #AEAEAE;
+    padding: 10px!important;
+}
+.border-p-high{
+    border: 1px solid #E10014;
+    padding: 10px!important;
+    margin-top: 10px;
+}
+
+.bullet-red::marker{
+    color: #E10014;
+}
+
+.container-colours-lnb{
+    display: flex;
+    gap: 25px;
+}
+.container-lnr-partnership .bloc-reference{
+    padding-bottom: 0px;
+    width: 325px;
+    height: 200px;
+}
+.container-lnr-partnership .bloc-reference p{
+    padding-top: 0;
+    width: auto;
+}
+.bloc-blue{
+    background: #0063AF;
+    cursor: copy;
+}
+
+.no-pad{
+    padding-top: 0!important;
+}
+
+.container-flex-sections{
+    display: flex;
+    gap: 25px;
+}
+
+.container-flex-sections .container-partnership-logo .container-fff-rights .box-right{
+    width: 100%;
+}
+
+.p-akzBold{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+}
+.p-akzReg{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    width: 100%;
+}
+.club-basket img{
+    height: 60px;
+    width: auto;
+}
+
+
+.img-volley{
+    max-width: 400px;
+}
+
+.container-rights-volley{
+    display: flex;
+}
+
+.p-check{
+    line-height: 20px;
+    padding-bottom: 25px;
+}
+.p-border{
+    padding-top: 10px!important;
+    border: 1px solid #E10014;
+    padding: 10px;
+}
+.p-border-black{
+    padding-top: 10px!important;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.container-logotypes-volley figcaption{
+    padding-top: 10px;
+}
+.container-logotypes-volley .box-club{
+    max-width: 100%;
+}
+.container-logotypes-volley img{
+   height: 60px;
+   object-fit: contain;
+}
+
+
+.box-local-partner .container-btns{
+    margin: 25px 0;
+}
+.container-last-box-partner{
+    margin-top: 25px;
+}
+
+.container-row-local-partner{
+    display: flex;
+}
+.box-local-partner p{
+    padding-top: 10px;
+}
+.box-local-partner{
+    width: 25%;
+}
+.container-last-box-partner ol li p{
+    width: auto;
+}
+
+.margin-resp{
+    margin-left: 25px;
+}
+
+.min-width{
+    min-width: 360px;
+}
+
+@media only screen and (max-width:1680px) {
+
+    .container-partner img {
+        height: 60px;
+    }
+
+    .container-backgrounds-sponso {
+        gap: 1px;
+    }
+
+    .img-OL-1 {
+        width: 250px !important;
+    }
+}
+@media only screen and (max-width:1480px) {
+
+    .text-left p{
+        width: auto;
+        max-width: 500px;
+    }
+
+    .box-logo-lnr img{
+        height: 100px;
+    }
+    .container-lnr-partnership .bloc-reference{
+        width: 205px;
+    }
+
+    .fullPage-sponsoringFR .container-backgrounds-sponso{
+        gap: 15px;
+    }
+    .margin-resp{
+        margin-left: 0;
+    }
+    table p{
+        width: 100px!important;
+    }
+}
+
+@media only screen and (max-width:1380px) {
+
+    #references .container-backgrounds,
+    #emotesLibrary .container-backgrounds {
+        flex-wrap: wrap;
+        justify-content: start
+    }
+
+    #references .text-left p,
+    #emotesLibrary .text-left p {
+        width: 600px
+    }
+}
+
+@media (max-width:1200px) {
+    .burger-menu {
+        display: flex
+    }
+
+    .menu-aside {
+        right: -250px;
+        transition: right 0.3s ease-in-out;
+        background-color: #fff;
+        top: 43px;
+        border-left: 3px solid #E10014
+    }
+
+    .menu-aside.open {
+        right: 0
+    }
+
+    .all-page {
+        padding: 40px 20px;
+        margin: 0 20px
+    }
+
+    header h1 {
+        padding-right: 70px
+    }
+
+    .red-bloc {
+        background: #E10014
+    }
+
+    .red-bloc .p-content-hover {
+        color: #fff
+    }
+
+    .red-bloc .p-content-hover-small {
+        color: #000
+    }
+
+    .yellow-bloc {
+        background: #FC0
+    }
+
+    .yellow-bloc p {
+        color: #000
+    }
+
+    .white-bloc {
+        background: #fff
+    }
+
+    .white-bloc .p-content-hover {
+        color: #E10014
+    }
+
+    .white-bloc .p-content-hover-small {
+        color: #000
+    }
+
+    .black-bloc {
+        background: #000
+    }
+
+    .black-bloc .p-content-hover {
+        color: #fff
+    }
+
+    .black-bloc .p-content-hover-small {
+        color: #FC0
+    }
+
+    .black-bloc .p-content-hover-small b {
+        color: #E10014
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .all-page {
+        padding: 40px 0;
+        margin: 0 10px
+    }
+
+    .container-btns a {
+        margin: 0
+    }
+
+    .container-btns {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px
+    }
+
+    .download-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px
+    }
+
+    .container-logotype img {
+        width: 350px
+    }
+
+    .container-logotype {
+        padding: 40px 10px
+    }
+
+    .container-logotype .is-italic {
+        margin: 40px 0
+    }
+
+    .title-big {
+        font-size: 34px;
+        line-height: 38px;
+        text-align: center;
+        width: 100%
+    }
+
+    .container-backgrounds {
+        flex-wrap: wrap;
+        justify-content: space-between
+    }
+
+    .text-left p,
+    .text-left {
+        width: 100%;
+        text-align: center
+    }
+
+    .ol-donts li {
+        text-align: left
+    }
+
+    .container-background-sponso {
+        min-height: 80px
+    }
+
+    .container-references {
+        flex-wrap: wrap
+    }
+
+    .color-hover-row {
+        flex-wrap: wrap
+    }
+
+    .img-gif {
+        width: 120px !important
+    }
+
+    .second-row-emote img {
+        width: 40px
+    }
+
+    .section-typography {
+        margin-bottom: 0
+    }
+
+    #logotype,
+    #introductionColours,
+    #introductionGraphics,
+    #introductionTypography {
+        padding-bottom: 0
+    }
+
+    .container-references {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 25px;
+        gap: 0;
+        justify-content: space-between
+    }
+
+    .bloc-reference {
+        flex: 0 1 calc(50% - 0px);
+        box-sizing: border-box;
+        padding: 25px;
+        position: relative
+    }
+
+    .container-bar-anim {
+        margin-top: 10px
+    }
+
+    .animNumber {
+        font-size: 12px
+    }
+
+    .bloc-color-hover {
+        height: 120px
+    }
+
+    #references .text-left p,
+    #emotesLibrary .text-left p {
+        width: 100%
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .bloc-color-hover {
+        height: 200px
+    }
+
+    .container-bar-anim {
+        display: none
+    }
+
+    .container-references {
+        justify-content: center
+    }
+}
