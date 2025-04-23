@@ -46,6 +46,16 @@
     src: url(../fonts/01-Web/WOFF/Betclic-CondensedMedium.woff) format('woff')
 }
 
+@font-face {
+    font-family: 'Akzidenz';
+    src: url(../fonts/01-Web/Akzidenz-grotesk-black.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'AkzidenzReg';
+    src: url(../fonts/01-Web/AkzidenzGroteskBQ-Reg.woff) format('woff')
+}
+
 html,
 body,
 div,
@@ -72,13 +82,20 @@ html {
     color: #111;
     font-family: 'BetclicRegular', serif;
     scroll-behavior: smooth;
-    max-width: 1720px;
     margin: auto;
-    overflow-x: hidden
+    overflow-x: hidden;
+
+}
+
+.full-page {
+    position: relative;
+    margin: auto;
+    max-width: 1720px;
+
 }
 
 .title-small {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 30px;
     font-family: 'BetclicCondensed'
 }
@@ -173,10 +190,23 @@ header {
     text-transform: uppercase;
     font-weight: 800;
     position: fixed;
-    width: 100vw;
     z-index: 3;
     top: 0;
-    left: 0
+    left: 0;
+    right: 0;
+    height: 52px;
+    padding: 0 50px;
+}
+
+header h1 {
+    font-family: 'BetclicLight';
+    position: relative;
+    top: 2px;
+}
+
+.a-home {
+    position: relative;
+    top: 2px;
 }
 
 .title-sponsoring {
@@ -190,15 +220,156 @@ header {
     margin-bottom: 85px;
 }
 
-
-header h1 {
-    padding-right: 20px
+.cta-login {
+    color: #fff;
+    text-transform: capitalize;
+    font-family: 'Roboto';
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
 }
 
 header .img-logo {
     width: 131px;
-    padding-left: 20px
 }
+
+.container-login {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.container-video-banner {
+    position: relative;
+    /* width: 100vw; */
+    margin: 0;
+    padding: 0;
+    margin-top: 52px;
+    height: 850px;
+}
+
+.container-content-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+    gap: 50px;
+}
+
+.video-banner {
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    height: 600px;
+    min-width: 100%;
+    min-height: 800px;
+}
+
+.container-video-banner h2 {
+    position: relative;
+    text-align: center;
+    max-width: 900px;
+}
+
+.container-switch-banner {
+    position: relative;
+}
+
+.container-box-cta-banner {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 70px;
+}
+
+.box-cta {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: #AEAEAE33;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.cta-banner a {
+    color: #E10014;
+    line-height: 20px;
+    padding: 12px 20px;
+    border: 1px solid #E10014;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-transform: uppercase;
+}
+
+.cta-banner a:hover {
+    background: #E10014;
+    color: #fff;
+}
+
+.cta-banner-is-active {
+    background: #E10014;
+    color: #fff;
+}
+
+.a-menu-loged {
+    background-image: linear-gradient(to right,
+            #fff,
+            #fff 50%,
+            #fff 50%);
+    display: inline-block;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.2s ease-in-out;
+    padding-bottom: 2px;
+    text-transform: capitalize;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    top: 2px;
+}
+.a-is-active {
+    font-weight: 900;
+}
+
+.a-menu-loged:before {
+    content: '';
+    background: #fff;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+.a-menu-loged:hover {
+    background-position: 0;
+}
+
+.a-menu-loged:hover::before {
+    width: 100%;
+}
+.a-is-active:hover::before{
+    width: 0;
+}
+
+.container-banner-guideline {
+    height: 600px;
+    width: 100%;
+    background: url('../img/Hedaer-guideline.png');
+    background-position: center;
+    background-size: cover;
+    margin-top: 52px;
+}
+
 
 .menu-aside {
     min-width: 250px;
@@ -210,9 +381,23 @@ header .img-logo {
     z-index: 2
 }
 
+
+.menu-aside-sticky {
+    position: absolute;
+}
+
+.sticky {
+    position: fixed;
+    top: 180px;
+}
+
 .big-ul-menu {
     padding-left: 50px;
     padding-top: 35px
+}
+
+.ul-menu-fixed {
+    padding-top: 0;
 }
 
 .li-small-menu {
@@ -244,7 +429,7 @@ header .img-logo {
     height: 24px;
     width: 40px;
     position: fixed;
-    top: 10px;
+    top: 17px;
     right: 5px;
     z-index: 1001
 }
@@ -256,7 +441,7 @@ header .img-logo {
     background-color: #fff;
     transition: all 0.3s ease-in-out;
     border-radius: 2px;
-    margin-top: -4px
+    margin-top: -5px
 }
 
 .small-ul-menu {
@@ -500,8 +685,8 @@ section {
 
 .p-content-big-technic {
     font-family: 'BetclicCondensed';
-    font-size: 32px;
-    line-height: 38px
+    font-size: 30px;
+    line-height: 34px
 }
 
 #image-container {
@@ -785,7 +970,7 @@ input[type="radio"] {
 
 .bloc-red .p-title-small::after,
 .bloc-black .p-title-small::after,
-.bloc-blue .p-title-small::after  {
+.bloc-blue .p-title-small::after {
     content: '';
     height: 30px;
     width: 30px;
@@ -1194,7 +1379,7 @@ input[type="range"] {
 }
 
 .section-page-sponsoring {
-    padding-top: 0;
+    padding-top: 0px;
 }
 
 .paddingBottomUp25 {
@@ -1217,16 +1402,19 @@ input[type="range"] {
     padding-bottom: 150px !important;
 }
 
-.container-box-country {
-    display: flex;
-    justify-content: center;
-}
-
 .container-partnership-logo {
     padding-bottom: 50px;
 }
 
+.container-flex-sections .container-partnership-logo {
+    width: 100%;
+}
 
+
+.container-box-country {
+    display: flex;
+    justify-content: center;
+}
 
 .box-country {
     display: flex;
@@ -1323,9 +1511,9 @@ input[type="range"] {
     top: -7px;
 }
 
-.container-all-partners {
+/* .container-all-partners {
     margin-top: 25px;
-}
+} */
 
 .caption-partners {
     font-family: 'Roboto', sans-serif;
@@ -1342,7 +1530,8 @@ input[type="range"] {
     display: flex;
     gap: 0px;
 }
-.container-partner-local{
+
+.container-partner-local {
     gap: 48px;
 }
 
@@ -1389,9 +1578,10 @@ input[type="range"] {
 }
 
 .h2-ufc {
-    font-family: 'BetclicRegularBold';
+    font-family: 'BetclicCondensedBold';
     color: #000;
-    font-size: 20px;
+    font-size: 30px;
+    line-height: 34px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1529,6 +1719,7 @@ input[type="range"] {
     border: 1px solid #E10014;
     padding: 10px;
 }
+
 .box-border-black {
     border: 1px solid #000;
     padding: 10px;
@@ -1626,136 +1817,181 @@ input[type="range"] {
     padding: 0;
     width: 100%;
 }
-.box-logo-lnr figcaption{
+
+.box-logo-lnr figcaption {
     padding: 25px 0;
 }
 
-.border-p-low{
+.border-p-low {
     border: 1px solid #AEAEAE;
-    padding: 10px!important;
+    padding: 10px !important;
 }
-.border-p-high{
+
+.border-p-high {
     border: 1px solid #E10014;
-    padding: 10px!important;
+    padding: 10px !important;
     margin-top: 10px;
 }
 
-.bullet-red::marker{
+.bullet-red::marker {
     color: #E10014;
 }
 
-.container-colours-lnb{
+.container-colours-lnb {
     display: flex;
     gap: 25px;
 }
-.container-lnr-partnership .bloc-reference{
+
+.container-lnr-partnership .bloc-reference {
     padding-bottom: 0px;
-    width: 325px;
+    width: 100%;
     height: 200px;
 }
-.container-lnr-partnership .bloc-reference p{
+
+.container-lnr-partnership .bloc-reference p {
     padding-top: 0;
     width: auto;
 }
-.bloc-blue{
+
+.bloc-blue {
     background: #0063AF;
     cursor: copy;
 }
 
-.no-pad{
-    padding-top: 0!important;
+.no-pad {
+    padding-top: 0 !important;
 }
 
-.container-flex-sections{
+.container-flex-sections {
     display: flex;
     gap: 25px;
 }
 
-.container-flex-sections .container-partnership-logo .container-fff-rights .box-right{
+.container-flex-sections .container-partnership-logo .container-fff-rights .box-right {
     width: 100%;
 }
 
-.p-akzBold{
+.p-akzBold {
     font-weight: 700;
     font-size: 20px;
-    line-height: 23px;
-    text-align: center;
+    line-height: 24px;
+    font-family: 'Akzidenz';
 }
-.p-akzReg{
+
+.p-akzReg {
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    text-align: center;
+    font-family: 'AkzidenzReg';
     width: 100%;
 }
-.club-basket img{
+
+.club-basket img {
     height: 60px;
     width: auto;
 }
 
 
-.img-volley{
+.img-volley {
     max-width: 400px;
 }
 
-.container-rights-volley{
+.container-rights-volley {
     display: flex;
 }
 
-.p-check{
+.p-check {
     line-height: 20px;
     padding-bottom: 25px;
 }
-.p-border{
-    padding-top: 10px!important;
+
+.p-border {
+    padding-top: 10px !important;
     border: 1px solid #E10014;
     padding: 10px;
 }
-.p-border-black{
-    padding-top: 10px!important;
+
+.p-border-black {
+    padding-top: 10px !important;
     border: 1px solid #000;
     padding: 10px;
 }
 
-.container-logotypes-volley figcaption{
+.container-logotypes-volley figcaption {
     padding-top: 10px;
 }
-.container-logotypes-volley .box-club{
+
+.container-logotypes-volley .box-club {
     max-width: 100%;
 }
-.container-logotypes-volley img{
-   height: 60px;
-   object-fit: contain;
+
+.container-logotypes-volley img {
+    height: 60px;
+    object-fit: contain;
 }
 
 
-.box-local-partner .container-btns{
+.box-local-partner .container-btns {
     margin: 25px 0;
 }
-.container-last-box-partner{
+
+.container-last-box-partner {
     margin-top: 25px;
 }
 
-.container-row-local-partner{
+.container-row-local-partner {
     display: flex;
 }
-.box-local-partner p{
+
+.box-local-partner p {
     padding-top: 10px;
 }
-.box-local-partner{
+
+.box-local-partner {
     width: 25%;
 }
-.container-last-box-partner ol li p{
+
+.container-last-box-partner ol li p {
     width: auto;
 }
 
-.margin-resp{
+.margin-resp {
     margin-left: 25px;
 }
 
-.min-width{
-    min-width: 360px;
+.img-betclic-elite-1 {
+    width: 275px;
+    max-width: 275px;
 }
+
+.container-img-sponso-elite {
+    align-items: center;
+}
+
+
+/* SPONSORING PORTUGAL */
+
+.container-partner-PT img{
+    height: 45px;
+}
+.container-partner-PT{
+    display: flex;
+    gap: 25px;
+}
+
+.container-logo-lpBetclic img{
+    max-height: 60px;
+}
+.container-logo-lpBetclic .ufc-partner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
 
 @media only screen and (max-width:1680px) {
 
@@ -1764,36 +2000,37 @@ input[type="range"] {
     }
 
     .container-backgrounds-sponso {
-        gap: 1px;
+        gap: 50px;
     }
 
     .img-OL-1 {
         width: 250px !important;
     }
 }
+
 @media only screen and (max-width:1480px) {
 
-    .text-left p{
+    .text-left p {
         width: auto;
         max-width: 500px;
     }
 
-    .box-logo-lnr img{
+    .box-logo-lnr img {
         height: 100px;
     }
-    .container-lnr-partnership .bloc-reference{
-        width: 205px;
+
+    .container-lnr-partnership .bloc-reference {
+        width: 175px;
     }
 
-    .fullPage-sponsoringFR .container-backgrounds-sponso{
+    .fullPage-sponsoringFR .container-backgrounds-sponso {
         gap: 15px;
     }
-    .margin-resp{
+
+    .margin-resp {
         margin-left: 0;
     }
-    table p{
-        width: 100px!important;
-    }
+
 }
 
 @media only screen and (max-width:1380px) {
@@ -1832,9 +2069,6 @@ input[type="range"] {
         margin: 0 20px
     }
 
-    header h1 {
-        padding-right: 70px
-    }
 
     .red-bloc {
         background: #E10014
