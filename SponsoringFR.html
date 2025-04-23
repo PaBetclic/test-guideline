@@ -5,6 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Betclic Logo Guidelines</title>
+
+    <!-- Latest CDN production Auth JS SDK-->
+
+
+    <!-- A DÉCOMMENTER POUR FAIRE FONCTIONNER OKTA  -->
+    <!-- <script src="https://global.oktacdn.com/okta-auth-js/7.7.0/okta-auth-js.min.js" type="text/javascript"></script> -->
+
+
+    <script type="text/javascript">
+
+        // UPDATE THESE FOR YOUR OKTA TENANT
+        var baseOktaURL = "https://betclic.okta.com"; //For example, https://dev-12345678.okta.com
+        var appClientID = "0oa13be9k91iFac1I2p8"; // For example, 0oa73hm5sh9jf6s5e1d6
+
+
+        // Bootstrap the AuthJS Client
+        const authClient = new OktaAuth({
+            // Required Fields for OIDC client
+            url: baseOktaURL,
+            clientId: appClientID,
+            redirectUri: "http://localhost:5500/SponsoringFR.html", //or the redirect URI for your app
+            issuer: baseOktaURL, // oidc
+            scopes: ['openid', 'profile', 'email']
+        });
+
+
+        if (authClient.isLoginRedirect()) {
+            // Parse token from redirect url
+            console.log("Parse token from redirect url");
+            authClient.token.parseFromUrl()
+                .then(data => {
+                    const { idToken } = data.tokens;
+                    // Display the Token
+                    const str1 = document.createElement('p');
+                    str1.innerHTML = `<b>${idToken.claims.email}</b> (email)<br /><b>${idToken.claims.sub}</b> (sub)<br /><br />Token Response:<br /><code style="word-wrap: break-word;">${JSON.stringify(idToken)}</code><br /><br/>Parsed from JWT<br />Client ID: <b>${authClient.options.clientId}</b><br />Issuer: <b>${authClient.options.issuer}</b>`;
+                    document.getElementById('content-jwt').appendChild(str1);
+                });
+        } else {
+            // Always Redirect to get a "Fresh JWT" - Skipping the Token Manager in this example
+            console.log("Attempt to retrieve ID Token from redirect");
+            authClient.token.getWithRedirect({
+                responseType: ['id_token']
+            });
+        }
+    </script>
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Antic+Slab&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -15,9 +62,19 @@
 
 <body>
     <header>
-        <img src="assets/img/Logo_Betclic_RGB.svg" alt="Betclic Logo" class="img-logo">
-        <h1 class="title-medium is-white">Guideline</h1>
+        <a href="index.html" class="a-home"><img src="assets/img/Logo_Betclic_RGB.svg" alt="Betclic Logo"
+                class="img-logo">
+        </a>
+        <div class="container-login">
+            <a href="index.html" class="a-menu-loged">Général</a>
+            <a href="" class="a-menu-loged a-is-active">Sponsoring</a>
+            <a href="" class="a-menu-loged">Download</a>
+            <h1 class="title-medium is-white">Guideline</h1>
+            <a class="cta-login">Name ?</a>
+        </div>
     </header>
+
+
 
     <button class="burger-menu" aria-label="Menu">
         <span></span>
@@ -26,7 +83,6 @@
     </button>
 
     <div class="full-page fullPage-sponsoringFR" id="up">
-
         <div class="menu-aside">
 
             <ul class="big-ul-menu">
@@ -42,13 +98,15 @@
                 </li>
 
                 <li class="li-small-menu" id="internationalBig">
-                    <p class="p-content-big is-lowlighted"><a href="#internationalPartner">INTERNATIONAL PARTNER</a></p>
+                    <p class="p-content-big is-lowlighted"><a href="#internationalPartner">INTERNATIONAL PARTNER</a>
+                    </p>
                 </li>
 
                 <li class="li-small-menu" id="nationalPartnersBig">
                     <p class="p-content-big is-lowlighted"><a href="#nationalPartners">NATIONAL PARTNERS</a></p>
                     <ul class="small-ul-menu">
-                        <li class="is-condensed is-lowlighted nav-item"><a href="#lfp">LFP - Ligue 1 Mc Donald’s…</a>
+                        <li class="is-condensed is-lowlighted nav-item"><a href="#lfp">LFP - Ligue 1 Mc
+                                Donald’s…</a>
                         </li>
                         <li class="is-condensed is-lowlighted nav-item"><a href="#fff">FFF</a></li>
                         <li class="is-condensed is-lowlighted nav-item"><a href="#cdf">Coupe De France</a>
@@ -71,6 +129,7 @@
             </ul>
         </div>
 
+
         <div class="all-page">
 
             <section class="sections-click-country">
@@ -78,16 +137,16 @@
                 <div class="container-box-country">
                     <div class="box-country">
                         <div class="country country-is-active">
-                            <p class="p-content-regular"><a href="">🇫🇷 FRANCE</a></p>
+                            <p class="p-content-regular"><a href="SponsoringFR.html">🇫🇷 FRANCE</a></p>
                         </div>
                         <div class="country">
-                            <p class="p-content-regular"><a href="">🇵🇹 PORTUGAL</a></p>
+                            <p class="p-content-regular"><a href="SponsoringPT_OFF.html">🇵🇹 PORTUGAL</a></p>
                         </div>
                         <div class="country">
-                            <p class="p-content-regular"><a href="">🇵🇱 POLAND</a></p>
+                            <p class="p-content-regular"><a href="SponsoringPL.html">🇵🇱 POLAND</a></p>
                         </div>
                         <div class="country">
-                            <p class="p-content-regular"><a href="">🌍 AFRICA</a></p>
+                            <p class="p-content-regular"><a href="SponsoringAF.html">🌍 AFRICA</a></p>
                         </div>
                     </div>
                 </div>
@@ -96,8 +155,6 @@
             <section class="sections-menu section-page-sponsoring" id="general">
                 <div class="div-element-menu paddingBottomUp100" id="general">
                     <h2 class="title-big is-highlighted">Géneral</h2>
-
-
 
                     <div class="container-backgrounds container-backgrounds-sponso container-sponsoring">
 
@@ -217,7 +274,7 @@
                                 <div class="box-partners-national box-full-width">
                                     <img src="assets/img/logoLFP.png" alt="partners">
                                     <img src="assets/img/LogoFFF.png" alt="partners">
-                                    <img src="assets/img/ol.png" alt="partners">
+                                    <img src="assets/img/logoOL.png" alt="partners">
                                     <img src="assets/img/logoLeFive.png" alt="partners">
                                     <img src="assets/img/logoLNR.png" alt="partners">
                                     <img src="assets/img/LogoFFR.png" alt="partners">
@@ -317,8 +374,7 @@
                                 width="62px">
                             Ultimate fighting championship</h2>
                         <div class="container-btns">
-                            <a href="assets/downloads/Logotypes_UFC.zip" class="btn-primary"
-                                id="btnPrint">Logotypes
+                            <a href="assets/downloads/Logotypes_UFC.zip" class="btn-primary" id="btnPrint">Logotypes
                                 <span class="extra-info">
                                     4,5 Mo <img src="assets/img/download.png" alt="download" class="download-img">
                                 </span></a>
@@ -525,13 +581,11 @@
                                     width="62px">
                                 Ligue de football professionnel</h2>
                             <div class="container-btns">
-                                <a href="assets/downloads/Logotypes_LFP.zip" class="btn-primary"
-                                    id="btnPrint">Logotypes
+                                <a href="assets/downloads/Logotypes_LFP.zip" class="btn-primary" id="btnPrint">Logotypes
                                     <span class="extra-info">
                                         396 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
-                                <a href="NONE" class="btn-primary"
-                                    id="btnDigit">Photos
+                                <a href="NONE" class="btn-primary" id="btnDigit">Photos
                                     <span class="extra-info">
                                         390 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
@@ -545,13 +599,13 @@
                                 <div class="text-left text-background ufc-align">
                                     <p class="p-content-regular p-border-black">
                                         <b class="b-warning">Contact</b><br>
-                                        Lucas Dupriez
+                                        Louiza Ladjici
                                     </p>
                                     <div>
                                         <h2 class="title-small is-lowlighted">Official Denominations </h2>
                                         <ol class="ol-ufc">
                                             <li>
-                                                <p class="p-content-regular">?</p>
+                                                <p class="p-content-regular">Partenaire Officiel de la LFP</p>
                                             </li>
 
 
@@ -870,13 +924,11 @@
                                     width="62px">
                                 Fédération Française de Football</h2>
                             <div class="container-btns">
-                                <a href="assets/downloads/Logotypes_FFF.zip" class="btn-primary"
-                                    id="btnPrint">Logotypes
+                                <a href="assets/downloads/Logotypes_FFF.zip" class="btn-primary" id="btnPrint">Logotypes
                                     <span class="extra-info">
                                         4,5 Mo <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
-                                <a href="NONE" class="btn-primary"
-                                    id="btnDigit">Photos
+                                <a href="NONE" class="btn-primary" id="btnDigit">Photos
                                     <span class="extra-info">
                                         390 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
@@ -1012,17 +1064,15 @@
                     <div class="text-left container-fond">
 
                         <div class="download-container paddingBottomUp50">
-                            <h2 class="title-small is-lowlighted h2-ufc"><img src="assets/img/cdfMascu.png" alt=""
+                            <h2 class="title-small is-lowlighted h2-ufc"><img src="assets/img/logoCdf.png" alt=""
                                     width="62px">
                                 Coupe de France</h2>
                             <div class="container-btns">
-                                <a href="assets/downloads/Logotypes_CDF.zip" class="btn-primary"
-                                    id="btnPrint">Logotypes
+                                <a href="assets/downloads/Logotypes_CDF.zip" class="btn-primary" id="btnPrint">Logotypes
                                     <span class="extra-info">
                                         1,3 Mo <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
-                                <a href="NONE" class="btn-primary"
-                                    id="btnDigit">Photos
+                                <a href="NONE" class="btn-primary" id="btnDigit">Photos
                                     <span class="extra-info">
                                         390 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
@@ -1125,17 +1175,15 @@
                     <div class="text-left container-fond">
 
                         <div class="download-container paddingBottomUp50">
-                            <h2 class="title-small is-lowlighted h2-ufc"><img src="assets/img/OL.png" alt=""
+                            <h2 class="title-small is-lowlighted h2-ufc"><img src="assets/img/logoOL.png" alt=""
                                     width="62px">
                                 Olympique Lyonnais</h2>
                             <div class="container-btns">
-                                <a href="assets/downloads/Logotypes_OL.zip" class="btn-primary"
-                                    id="btnPrint">Logotypes
+                                <a href="assets/downloads/Logotypes_OL.zip" class="btn-primary" id="btnPrint">Logotypes
                                     <span class="extra-info">
                                         106 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
-                                <a href="NONE" class="btn-primary"
-                                    id="btnDigit">Photos
+                                <a href="NONE" class="btn-primary" id="btnDigit">Photos
                                     <span class="extra-info">
                                         390 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
@@ -1276,8 +1324,7 @@
                                     <span class="extra-info">
                                         143 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
-                                <a href="NONE" class="btn-primary"
-                                    id="btnDigit">Photos
+                                <a href="NONE" class="btn-primary" id="btnDigit">Photos
                                     <span class="extra-info">
                                         390 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
@@ -1350,13 +1397,11 @@
                                     width="62px">
                                 fédération française de rugby</h2>
                             <div class="container-btns">
-                                <a href="assets/downloads/Logotype_FFR.zip" class="btn-primary"
-                                    id="btnPrint">Logotypes
+                                <a href="assets/downloads/Logotype_FFR.zip" class="btn-primary" id="btnPrint">Logotypes
                                     <span class="extra-info">
                                         204 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
-                                <a href="NONE" class="btn-primary"
-                                    id="btnDigit">Photos
+                                <a href="NONE" class="btn-primary" id="btnDigit">Photos
                                     <span class="extra-info">
                                         390 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
@@ -1422,8 +1467,7 @@
                                     <span class="extra-info">
                                         4 Mo <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
-                                <a href="NONE" class="btn-primary"
-                                    id="btnDigit">Photos
+                                <a href="NONE" class="btn-primary" id="btnDigit">Photos
                                     <span class="extra-info">
                                         390 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
@@ -1512,7 +1556,7 @@
                                     </p>
                                 </div>
                                 <div class="box-logo-lnr">
-                                    <img src="assets/img/top14.jpg" alt="">
+                                    <img src="assets/img/Top_14_Logo.png" alt="">
                                     <figcaption class="caption-ufc">Top 14 + Partenaire Paris Sportif, cosignature
                                     </figcaption>
                                     <p class="p-content-regular">The Betclic logotype is often present in the creations,
@@ -1656,13 +1700,11 @@
                                     width="62px">
                                 Ligue Nationale de basket-ball</h2>
                             <div class="container-btns">
-                                <a href="assets/downloads/Logotype_LNB.zip" class="btn-primary"
-                                    id="btnPrint">Logotypes
+                                <a href="assets/downloads/Logotype_LNB.zip" class="btn-primary" id="btnPrint">Logotypes
                                     <span class="extra-info">
                                         677 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
-                                <a href="NONE" class="btn-primary"
-                                    id="btnDigit">Photos
+                                <a href="NONE" class="btn-primary" id="btnDigit">Photos
                                     <span class="extra-info">
                                         390 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
@@ -1731,8 +1773,8 @@
                                 </div>
                             </div>
 
-                            <div class="container-image-corpo container-img-UFC">
-                                <div class="container-img-corpo img-UFC">
+                            <div class="container-image-corpo container-img-sponso-elite">
+                                <div class="container-img-corpo img-UFC img-betclic-elite-1">
                                     <img src="assets/img/lnb1.jpg" alt="Image Corpo">
                                     <figcaption class="caption-sponso">Betclic Élite, official app partner</figcaption>
                                 </div>
@@ -1894,8 +1936,8 @@
 
                             <div class="container-partnership-logo min-width">
                                 <h2 class="title-small is-lowlighted paddingBottomUp25">Typography </h2>
-                                <p class="p-content-regular no-pad p-akzBold">Akzidenz-Grotesk BQ Bold</p>
-                                <p class="p-content-regular no-pad p-akzReg">Akzidenz-Grotesk BQ Regular</p>
+                                <p class="p-content-regular no-pad p-akzBold">Akzidenz-Grotesk Bold</p>
+                                <p class="p-content-regular no-pad p-akzReg">Akzidenz-Grotesk Regular</p>
                             </div>
 
 
@@ -1936,7 +1978,7 @@
                                     <figcaption class="caption-clubName">Bourg-en-Bresse</figcaption>
                                 </div>
                                 <div class="box-club">
-                                    <img src="assets/img/Chalon-Sur-Saône.png" alt="Club ligue 1">
+                                    <img src="assets/img/ChalonSaone.png" alt="Club ligue 1">
                                     <figcaption class="caption-clubName">Chalon-sur-Saône</figcaption>
                                 </div>
                                 <div class="box-club">
@@ -2012,8 +2054,7 @@
                                     <span class="extra-info">
                                         1,7 Mo <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
-                                <a href="NONE" class="btn-primary"
-                                    id="btnDigit">Photos
+                                <a href="NONE" class="btn-primary" id="btnDigit">Photos
                                     <span class="extra-info">
                                         390 Ko <img src="assets/img/download.png" alt="download" class="download-img">
                                     </span></a>
@@ -2121,10 +2162,7 @@
                                         <img src="assets/img/LNV.png" alt="Club ligue 1">
                                         <figcaption class="caption-clubName">Ligue Nationale Volley</figcaption>
                                     </div>
-                                    <div class="box-club">
-                                        <img src="assets/img/LBM.png" alt="Club ligue 1">
-                                        <figcaption class="caption-clubName">Ligue B Masculine Volley</figcaption>
-                                    </div>
+
                                     <div class="box-club">
                                         <img src="assets/img/MarmaraSpikeLigue.png" alt="Club ligue 1">
                                         <figcaption class="caption-clubName">Marmara
@@ -2134,6 +2172,10 @@
                                         <img src="assets/img/Saforelle.jpg" alt="Club ligue 1">
                                         <figcaption class="caption-clubName">Saforelle
                                             Power Six</figcaption>
+                                    </div>
+                                    <div class="box-club">
+                                        <img src="assets/img/LBM.png" alt="Club ligue 1">
+                                        <figcaption class="caption-clubName">Ligue B Masculine Volley</figcaption>
                                     </div>
                                     <div class="box-club">
                                         <img src="assets/img/FFFVolleyxBetclic.png" alt="Club ligue 1">
@@ -2266,6 +2308,7 @@
                                         <li>
                                             <p class="p-content-regular">Add the Top 14 logo in the case of use of an
                                                 opposing club (see LNR partnership)
+                                            </p>
                                         </li>
 
                                     </ol>
@@ -2481,7 +2524,7 @@
 
     <footer>
         <div class="container-footer">
-            <p class="p-footer p-sf is-centered">© Betclic Group 2025 - Last update 10/02/2025, 10:10.</p>
+            <p class="p-footer p-sf is-centered">© Betclic Group 2025 - Last update 10/03/2025, 10:10.</p>
         </div>
 
     </footer>
